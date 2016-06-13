@@ -23,6 +23,8 @@
 
 		{!! Form::control('text', 0, 'title', $errors, trans('back/blog.title')) !!}
 
+		{!! Form::control('file', 0, 'image', $errors, trans('Image')) !!}
+
 		<div class="form-group {!! $errors->has('slug') ? 'has-error' : '' !!}">
 			{!! Form::label('slug', trans('back/blog.permalink'), ['class' => 'control-label']) !!}
 			{!! url('/') . '/blog/' . Form::text('slug', null, ['id' => 'permalien']) !!}

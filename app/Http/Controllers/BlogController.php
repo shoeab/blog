@@ -134,6 +134,15 @@ class BlogController extends Controller {
 	 */
 	public function store(PostRequest $request)
 	{
+		print_r($request->all());
+		echo $request->file('image');exit;
+		$imageName = $request->id . '.' . 
+        $request->file('image')->getClientOriginalExtension();
+
+	    $request->file('image')->move(
+	        base_path() . '/public/images/', $imageName
+	    );
+
 		$this->blog_gestion->store($request->all(), $request->user()->id);
 
 		return redirect('blog')->with('ok', trans('back/blog.stored'));

@@ -170,6 +170,7 @@ return [
 		App\Providers\RouteServiceProvider::class,
 		App\Services\Html\HtmlServiceProvider::class,
 		Bestmomo\Filemanager\FilemanagerServiceProvider::class,
+                App\Providers\EntrustCustomServiceProvider::class,
 
 	],
 
@@ -220,6 +221,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 		'Form'		=> Collective\Html\FormFacade::class,
 		'HTML'		=> Collective\Html\HtmlFacade::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
 
 	],
 
